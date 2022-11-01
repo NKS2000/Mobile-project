@@ -88,13 +88,9 @@ main{
 /*First section 1/4*/
 .main-exchange-container{
     position: relative;
-    display: flex;
-    flex-direction: column;
     width: 100%;
     min-width: 320px;
     height: auto;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     margin-bottom: 48px;
 }
@@ -128,11 +124,18 @@ main{
     padding: 0 16px;
 }
 /*First table*/
+.tables-container{
+    display: flex;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
 .tables-container .main-table{
+    scroll-snap-align: center;
     width: 70%;
     height: 360px;
     font-family: 'Inter', sans-serif;
-    margin: 0 auto;
+    margin: 0px 14px 0px 24px;
     min-width: 235px;
     max-width: 500px;
 }
@@ -238,6 +241,9 @@ main{
     margin-left: 6px;
 }
 /*Second table*/
+.tables-container .second-table{
+    margin: 0px 24px 0px 14px;
+}
 .main-table .second-table--title{
     color: var(--secondary-blue);
 }
@@ -446,7 +452,6 @@ main{
 }
 .plans-container--slider{
     display: flex;
-    width: 320px;
     overflow-x: scroll;
     overscroll-behavior-x: contain;
     scroll-snap-type: x proximity;
@@ -455,7 +460,7 @@ main{
     position: relative;
     scroll-snap-align: center;
     width: 70%;
-    min-width: 230px;
+    min-width: 190px;
     max-width: 300px;
     height: 250px;
     margin: 50px 13px 0;
@@ -530,4 +535,33 @@ main{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+
+/*Footer*/
+footer{
+    display: flex;
+    width: 100%;
+    min-width: 320px;
+    height: 150px;
+    background-color: var(--bitcoin-orange);
+}
+footer section{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+footer .left ul{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    list-style: none;
+}
+.left li{
+    margin: 10px 0;
+}
+.left a{
+    text-decoration: none;
+    color: var(--white);
 }
